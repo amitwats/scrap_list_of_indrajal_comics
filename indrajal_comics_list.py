@@ -7,7 +7,6 @@ def get_list_of_pages():
         yield f"https://comicvine.gamespot.com/indrajal-comics/4050-40270/?page={count}"
     for count in range(10):
         yield f"https://comicvine.gamespot.com/indrajal-comics/4050-40373//?page={count}"
-    # return ["https://comicvine.gamespot.com/indrajal-comics/4050-40373/?page=9"]
 
 def get_data(element):
     image_url=element.find("div",{'class':'imgboxart'}).find('img')["src"]
@@ -28,12 +27,5 @@ if __name__ == '__main__':
             block=get_data(element)
             comic_list.append(block)
             print(block)
-        # print(list_comic_elements.find_all('li')[0])
-        # comic_list()
 
-    # page = urlopen("https://comicvine.gamespot.com/indrajal-comics/4050-40270/?page=1").read().decode('utf-8')
-    # soup = BeautifulSoup(page, 'html.parser')
-    # list_comic_elements=soup.find_all('ul', class_='editorial grid issue-grid js-simple-paginator-container')[0]
-    # print(list_comic_elements.find_all('li')[0])
-    # print(get_data(list_comic_elements.find_all('li')[0]))
 
